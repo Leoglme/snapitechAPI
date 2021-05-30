@@ -23,12 +23,12 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pug": "^3.0.2",
-    "util.promisify": "^1.1.1"
+    "util.promisify": "^1.1.1",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
-    "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express-messages": "^1.0.1",
     "express-session": "^1.17.1",
