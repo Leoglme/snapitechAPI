@@ -49,7 +49,9 @@ const uploads = multer({ storage: storage });
 
 app.use(uploads.any());
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve(__dirname, 'build')));
+    app.use(express.static('build'));
+    console.log(path.resolve(__dirname, 'build'));
+    console.log(express.static(path.resolve(__dirname, 'build')));
 } else {
     app.use(express.static('./public'));
 }
