@@ -7,6 +7,9 @@ const welcomeMail = require("./public/mail_template");
 const transfertMail = require("./public/mail_transfert");
 const fetchRouter = require('./routes/fetch-route');
 const app = express();
+const expressValidator = require('express-validator');
+const multer = require('multer')
+app.use(expressValidator())
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -22,7 +25,7 @@ app.listen(port, hostname, () => {
 
 app.get("/", (req, res) => {
     res.send(
-        "<h1 style='text-align: center'>Bienvenue sur SnapTechs Express Js API<br><br>👋</h1>"
+        "<h1 style='text-align: center'>Bienvenue sur SnapTech Express Js API<br><br>👋</h1>"
     );
 });
 
