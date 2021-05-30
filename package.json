@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "connect-flash": "^0.1.1",
     "dotenv": "^9.0.2",
     "express-messages": "^1.0.1",
