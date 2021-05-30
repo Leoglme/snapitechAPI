@@ -67,33 +67,33 @@ const fs = require('fs');
 app.post('/api/upload', (req, res, next) => {
     console.log("req.files", req.files);
 
-    let urls = [];
-
-    async function sendImagesToCloudinary() {
-        for (let file of req.files) {
-            await cloudinary.uploader.upload(
-                file.path,
-                {
-                    public_id: `${Date.now()}`,
-                    resource_type: 'auto'
-                }
-            ).then(result => {
-                //del files after upload on cloudinary
-                fs.unlink(file.path, function (err) {
-                    if (err) {
-                        console.log(err);
-                    }
-                });
-                urls.push(result.url);
-            })
-                .catch(err => {
-                    console.log(err);
-                });
-        }
-        res.json(urls);
-    }
-
-    sendImagesToCloudinary().then(r => (console.log('r', r)));
+    // let urls = [];
+    //
+    // async function sendImagesToCloudinary() {
+    //     for (let file of req.files) {
+    //         await cloudinary.uploader.upload(
+    //             file.path,
+    //             {
+    //                 public_id: `${Date.now()}`,
+    //                 resource_type: 'auto'
+    //             }
+    //         ).then(result => {
+    //             //del files after upload on cloudinary
+    //             fs.unlink(file.path, function (err) {
+    //                 if (err) {
+    //                     console.log(err);
+    //                 }
+    //             });
+    //             urls.push(result.url);
+    //         })
+    //             .catch(err => {
+    //                 console.log(err);
+    //             });
+    //     }
+    //     res.json(urls);
+    // }
+    //
+    // sendImagesToCloudinary().then(r => (console.log('r', r)));
 });
 
 // app.post('/api/upload', upload.single('file'), function (req, res, next) {
