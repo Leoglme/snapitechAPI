@@ -10,10 +10,6 @@ app.use(cors({origin: "*"}));
 app.use(bodyParser.json());
 const fs = require('fs')
 app.use(bodyParser.urlencoded({ extended: true }))
-bodyParser = {
-    json: {limit: '50mb', extended: true},
-    urlencoded: {limit: '50mb', extended: true}
-};
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
@@ -60,3 +56,14 @@ app.post('/snap',upload.single('fileData'), (req, res,next) => {
         }
     });
 });
+
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: '15MB' }))
+
+app.post('/upload/snap', (req, res) => {
+    fs.writeFile('./out.png', req.body.imgsource, 'base64', (err) => {
+        if (err) throw err
+    })
+    res.status(200)
+})
