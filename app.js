@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 const storage = multer.diskStorage({
     destination: (req, file, callBack) => {
-        callBack(null, '/public/assets/images')
+        callBack(null, 'public/assets/images')
     },
     filename: (req, file, callBack) => {
         callBack(null, `${Math.floor(Date.now() / 100) + file.originalname}`)
@@ -32,10 +32,6 @@ const storage = multer.diskStorage({
 })
 
 let upload = multer({storage: storage, dest: '../public/assets/images/'})
-
-app.get('/', (req, res) => {
-    res.status(200).send('to upload image use this  /api/upload.');
-});
 
 app.post('/api/upload', upload.single('file'), function (req, res, next) {
     console.log(req.body);
