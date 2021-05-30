@@ -20,3 +20,20 @@ app.get("/", (req, res) => {
         "<h1 style='text-align: center'>Bienvenue sur SnapTechie Express Js API<br><br>👋</h1>"
     );
 });
+const snapStorage = multer.diskStorage({
+    destination: (req, image, callBack) => {
+        callBack(null, 'assets')
+    },
+    filename: (req, image, callBack) => {
+        callBack(null, image.name.filename)
+    }
+})
+
+let snapUpload = multer({storage: snapStorage, dest: '../assets'})
+
+app.post('/snap',function (req, res, next) {
+    console.log(req);
+    res.status(200).json({
+        populateArticle: "populateArticle",
+    })
+})
