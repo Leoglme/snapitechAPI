@@ -25,7 +25,8 @@
     "passport-local": "^1.0.0",
     "pug": "^3.0.2",
     "util.promisify": "^1.1.1",
-    "cloudinary": "^1.25.2"
+    "cloudinary": "^1.25.2",
+    "dotenv": "^9.0.2"
   },
   "devDependencies": {
     "bcrypt": "^5.0.1",
