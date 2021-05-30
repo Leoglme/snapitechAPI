@@ -5,6 +5,7 @@ const app = express();
 const router = express.Router();
 const expressValidator = require('express-validator');
 const multer = require('multer')
+router.use(expressValidator())
 
 app.use(cors({origin: "*"}));
 app.use(bodyParser.json());
