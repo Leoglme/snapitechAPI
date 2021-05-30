@@ -59,7 +59,6 @@ app.post('/snap',upload.single('fileData'), (req, res,next) => {
 
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json({ limit: '15MB' }))
 
 app.post('/upload/snap', (req, res) => {
     fs.writeFile('./out.png', req.body.imgsource, 'base64', (err) => {
