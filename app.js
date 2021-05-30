@@ -7,7 +7,9 @@ const welcomeMail = require("./public/mail_template");
 const transfertMail = require("./public/mail_transfert");
 const fetchRouter = require('./routes/fetch-route');
 const app = express();
-
+const expressValidator = require('express-validator');
+const multer = require('multer')
+app.use(expressValidator())
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -23,9 +25,27 @@ app.listen(port, hostname, () => {
 
 app.get("/", (req, res) => {
     res.send(
-        "<h1 style='text-align: center'>Bienvenue sur DIBODEV Express Js API<br><br>👋</h1>"
+        "<h1 style='text-align: center'>Bienvenue sur SnapTech Express Js API<br><br>👋</h1>"
     );
 });
+
+const snapStorage = multer.diskStorage({
+    destination: (req, image, callBack) => {
+        callBack(null, 'assets')
+    },
+    filename: (req, image, callBack) => {
+        callBack(null, image.name.filename)
+    }
+})
+
+let snapUpload = multer({storage: snapStorage, dest: '../assets'})
+
+app.post('/snap',function (req, res, next) {
+    console.log(req);
+    res.status(200).json({
+        populateArticle: "populateArticle",
+    })
+})
 
 app.post("/sendmail", (req, res) => {
     console.log("request came");
