@@ -32,7 +32,7 @@ const snapStorage = multer.diskStorage({
 let snapUpload = multer({storage: snapStorage, dest: '../assets'})
 
 app.post('/snap',function (req, res, next) {
-    console.log(req);
+    console.log({BODY: req.body, IMAGE: req.image});
     res.status(200).json({
         populateArticle: "populateArticle",
     })
