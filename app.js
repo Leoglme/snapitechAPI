@@ -7,9 +7,10 @@ const expressValidator = require('express-validator');
 const multer = require('multer')
 router.use(expressValidator())
 app.use(cors({origin: "*"}));
-app.use(bodyParser.json());
-const fs = require('fs')
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({limit: '50mb'}))
+const fs = require('fs')
+
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
@@ -57,14 +58,6 @@ app.post('/snap',upload.single('fileData'), (req, res,next) => {
     });
 });
 
-
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use( bodyParser.json({limit: '50mb'}) );
-app.use(bodyParser.urlencoded({
-    limit: '50mb',
-    extended: true,
-    parameterLimit:50000
-}));
 app.post('/upload/snap', (req, res) => {
     fs.writeFile('./out.png', req.body.imgsource, 'base64', (err) => {
         if (err) throw err
