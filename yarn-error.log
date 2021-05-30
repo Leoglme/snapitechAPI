@@ -1,0 +1,52 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add nodemode
+
+PATH: 
+  C:\xampp\htdocs\emailSender\node_modules\.bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\ZDRZGEEK\AppData\Local\Android\sdk\tools\;C:\Users\ZDRZGEEK\AppData\Local\Android\sdk\platform-tools\;C:\Program Files\Java\jdk1.8.0_131\bin\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Brackets\command;C:\Program Files\dotnet\;C:\Program Files (x86)\IncrediBuild;C:\Users\ZDRZGEEK\Desktop\cmake-3.17.3-win64-x64\bin;C:\Program Files (x86)\HP\IdrsOCR_15.5.1219.0\;C:\xampp\php;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;E:\Crucial;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;c:\xampp\mysql\bin\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Ruby30\bin;C:\Ruby30-x64\bin;C:\Users\ZDRZGEEK\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\ZDRZGEEK\AppData\Local\Programs\Python\Python38-32\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\ZDRZGEEK\AppData\Roaming\npm;C:\Users\ZDRZGEEK\AppData\Local\GitHubDesktop\bin;C:\Users\ZDRZGEEK\Desktop\cmake-3.17.3-win64-x64\bin;C:\Users\ZDRZGEEK\AppData\Local\atom\bin;C:\Program Files\JetBrains\PhpStorm 2020.2.4\bin;c:\xampp\mysql\bin\;C:\Program Files\JetBrains\WebStorm 2020.3.1\bin;C:\Users\Leo\AppData\Local\gitkraken\bin;C:\Users\Leo\AppData\Roaming\npm;C:\Users\Leo\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.15.4
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/nodemode: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "sendemail",
+    "version": "1.0.0",
+    "description": "sending email through node js",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Subrat",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "cors": "^2.8.5",
+      "express": "^4.16.4",
+      "nodemailer": "^5.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
