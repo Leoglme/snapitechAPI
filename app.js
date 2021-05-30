@@ -8,6 +8,9 @@ const multer = require('multer')
 router.use(expressValidator())
 app.use(cors({origin: "*"}));
 app.use(bodyParser.json());
+const fs = require('fs')
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: '15MB' }))
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
@@ -32,10 +35,9 @@ const snapStorage = multer.diskStorage({
 
 let snapUpload = multer({storage: snapStorage, dest: '../assets'})
 
-app.post('/snap',function (req, res, next) {
-    // console.log({BODY: req.body, IMAGE: req.image});
-    console.log(req);
-    res.status(200).json({
-        populateArticle: "populateArticle",
+app.post('/snap',(req, res) => {
+    fs.writeFile('./out.png', req.body.imgsource, 'base64', (err) => {
+        if (err) throw err
     })
+    res.status(200)
 })
