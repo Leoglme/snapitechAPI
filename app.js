@@ -65,7 +65,7 @@ cloudinary.config({
 const fs = require('fs');
 
 app.post('/api/upload', (req, res, next) => {
-    console.log(req.files);
+    console.log("req.files", req.files);
 
     let urls = [];
 
