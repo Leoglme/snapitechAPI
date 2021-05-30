@@ -18,41 +18,27 @@ app.get("/", (req, res) => {
     );
 });
 
-
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-multer({
-    limits: {fieldSize: 25 * 1024 * 1024},
-});
 
-const Storage = multer.diskStorage({
-    destination(req, file, callback) {
-        callback(null, './images');
+
+const storage = multer.diskStorage({
+    destination: (req, file, callBack) => {
+        callBack(null, '../app/public/uploads')
     },
-    filename(req, file, callback) {
-        callback(null, `${file.fieldname}_${Date.now()}_${file.originalname}`);
-    },
-});
+    filename: (req, file, callBack) => {
+        callBack(null, `${Math.floor(Date.now() / 100) + file.originalname}`)
+    }
+})
+
+let upload = multer({storage: storage, dest: '../../app/public/uploads/'})
 
 app.get('/', (req, res) => {
     res.status(200).send('to upload image use this  /api/upload.');
 });
 
-app.post('/api/upload', (req, res) => {
-    let upload = multer({storage: Storage}).single('file');
-    upload(req, res, function (err) {
-        console.log("file", req.file)
-        console.log("body", req.body)
-        if (!req.file) {
-            return res.send('Pleassse select an image to upload');
-        } else if (err instanceof multer.MulterError) {
-            return res.send(err);
-        } else if (err) {
-            return res.send(err);
-        }
-        // Display uploaded image for user validation
-        res.send(req.file.path); // send uploaded image
-    });
+app.post('/api/upload', upload.single('file'), function (req, res, next) {
+    console.log(req.body);
+    console.log(req.body.file);
+    console.log(req.file);
 });
