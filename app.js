@@ -7,7 +7,7 @@ const multer = require('multer')
 router.use(expressValidator())
 
 app.use(bodyParser.json());
-
+//port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
 app.listen(port, hostname, () => {
