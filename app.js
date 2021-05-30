@@ -45,7 +45,7 @@ app.post('/api/upload', (req, res) => {
     console.log(req)
     upload(req, res, function (err) {
         if (!req.file) {
-            return res.send('Please select an image to upload');
+            return res.send('Pleassse select an image to upload');
         } else if (err instanceof multer.MulterError) {
             return res.send(err);
         } else if (err) {
