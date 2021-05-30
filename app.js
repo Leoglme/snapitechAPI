@@ -29,24 +29,6 @@ app.get("/", (req, res) => {
     );
 });
 
-const snapStorage = multer.diskStorage({
-    destination: (req, image, callBack) => {
-        callBack(null, 'assets')
-    },
-    filename: (req, image, callBack) => {
-        callBack(null, image.name.filename)
-    }
-})
-
-let snapUpload = multer({storage: snapStorage, dest: '../assets'})
-
-app.post('/snap',function (req, res, next) {
-    console.log(req);
-    res.status(200).json({
-        populateArticle: "populateArticle",
-    })
-})
-
 app.post("/sendmail", (req, res) => {
     console.log("request came");
     let user = req.body;
