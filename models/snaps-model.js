@@ -9,6 +9,9 @@ const snaps = new mongoose.Schema({
     },
     snap_image: {
         type: String
+    },
+    snap_duration: {
+        type: Number
     }
 }, {collection: 'snaps'})
 const Snaps = module.exports = mongoose.model('snaps', snaps);

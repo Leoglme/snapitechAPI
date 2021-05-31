@@ -26,10 +26,12 @@ app.get("/", (req, res) => {
 app.post('/api/upload', async (req, res) => {
     const id_snap = req.body.id_snap;
     const snap_image = req.body.snap_image;
+    const snap_duration = req.body.snap_duration;
 
     let newSnap = new Snaps({
         id_snap: id_snap,
-        snap_image: snap_image
+        snap_image: snap_image,
+        snap_duration: snap_duration
     });
     await newSnap.save(function (err) {
         if (err) {
