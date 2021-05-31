@@ -56,3 +56,23 @@ app.get('/snaps/:email', async (req, res) => {
         success: true,
     })
 })
+
+app.put('/snap/:id', async (req, res) => {
+    let cond = {_id: req.params.id};
+    let update = {
+        newChat: false,
+    };
+    let opts = {
+        upsert: true,
+        new: true
+    };
+    let updatedSnaps = Snaps.findByIdAndUpdate(cond, update, opts)
+        .then((r) => res.status(200).json({
+            snap: r,
+            success: true,
+        }))
+        .catch((err) => res.status(500).json({
+            error: err,
+            success: false,
+        }));
+})
