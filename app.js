@@ -3,11 +3,11 @@ const app = express();
 const cors = require("cors");
 const Snaps = require('models/snaps-model')
 app.use(cors({origin: "*"}));
-
 app.use(express.static('public'));
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true}));
 app.use(cors());
+const db = require('database');
 
 //port
 const hostname = '0.0.0.0';
