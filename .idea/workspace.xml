@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="014c36ed-2470-473a-a1d5-d30628462ced" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/snaps-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/snaps-model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +26,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mernj5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -39,7 +40,9 @@
       <option name="presentableId" value="Default" />
       <updated>1622336332223</updated>
       <workItem from="1622336333661" duration="8169000" />
-      <workItem from="1622401845856" duration="14788000" />
+      <workItem from="1622401845856" duration="15818000" />
+      <workItem from="1622437783448" duration="87000" />
+      <workItem from="1622437878567" duration="73000" />
     </task>
     <servers />
   </component>

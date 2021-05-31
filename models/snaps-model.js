@@ -4,8 +4,11 @@ const db = require('../database');
 
 /*Member schema*/
 const snaps = new mongoose.Schema({
-    id_snap: {
-        type: Number
+    sender: {
+        type: String
+    },
+    receiver: {
+        type: String
     },
     snap_image: {
         type: String
