@@ -20,5 +20,5 @@ const snaps = new mongoose.Schema({
         type: Boolean,
         default: true
     }
-}, {collection: 'snaps'})
+}, {timestamps: true, collection: 'snaps'})
 const Snaps = module.exports = mongoose.model('snaps', snaps);
