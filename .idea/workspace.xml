@@ -4,7 +4,6 @@
     <list default="true" id="014c36ed-2470-473a-a1d5-d30628462ced" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/snaps-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/snaps-model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
       <workItem from="1622336333661" duration="8169000" />
       <workItem from="1622401845856" duration="15818000" />
       <workItem from="1622437783448" duration="87000" />
-      <workItem from="1622437878567" duration="73000" />
+      <workItem from="1622437878567" duration="686000" />
     </task>
     <servers />
   </component>

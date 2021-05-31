@@ -30,8 +30,8 @@ app.post('/api/upload', async (req, res) => {
     const snap_duration = req.body.snap_duration;
 
     let newSnap = new Snaps({
-        sender = sender,
-        receiver = receiver,
+        sender: sender,
+        receiver: receiver,
         snap_image: snap_image,
         snap_duration: snap_duration
     });
