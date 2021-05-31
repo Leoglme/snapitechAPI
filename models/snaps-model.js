@@ -15,6 +15,10 @@ const snaps = new mongoose.Schema({
     },
     snap_duration: {
         type: Number
+    },
+    newChat: {
+        type: Boolean,
+        default: true
     }
 }, {collection: 'snaps'})
 const Snaps = module.exports = mongoose.model('snaps', snaps);
