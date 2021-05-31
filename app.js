@@ -19,7 +19,7 @@ app.listen(port, hostname, () => {
 
 app.get("/", (req, res) => {
     res.send(
-        "<h1 style='text-align: center'>Bienvenue sur SnapTechie Express Js API<br><br>👋</h1>"
+        "<h1 style='text-align: center'>Bienvenue sur SnapTech Express Js API<br><br>👋</h1>"
     );
 });
 
