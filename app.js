@@ -11,8 +11,7 @@ const db = require('./database');
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
-const axios = require('axios');
-const FormData = require('form-data');
+const fetch = require('node-fetch');
 app.listen(port, hostname, () => {
     console.log("bien connecté");
     console.log(`Server running at https://${hostname}:${port}`);
@@ -83,11 +82,10 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
 
-    console.log('Client-ID ' + apiKey);
-
-    axios.get('https://api.imgur.com/3/image/g4Jyo7L', {
+    fetch('https://api.imgur.com/3/image/g4Jyo7L', {
+        method: 'GET',
         headers: {
-            Authorization: 'Client-ID ' + apiKey
+            Authorization: 'Client-ID dc6e79e2ed95c6b'
         }
     }).then(r => res.status(200).json({
         data: r,
