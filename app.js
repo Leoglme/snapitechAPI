@@ -50,7 +50,7 @@ app.post('/api/upload', async (req, res) => {
 });
 
 app.get('/snaps/:email', async (req, res) => {
-    const snaps = await Snaps.find({receiver: req.params.email})
+    const snaps = await Snaps.find({receiver: req.params.email}).sort({'updatedAt': 1});
     res.status(200).json({
         data: snaps,
         success: true,
@@ -61,6 +61,7 @@ app.put('/snap/:id', async (req, res) => {
     let cond = {_id: req.params.id};
     let update = {
         newChat: false,
+        snap_image: null
     };
     let opts = {
         upsert: true,
