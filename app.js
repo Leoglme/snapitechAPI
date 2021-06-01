@@ -82,16 +82,15 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
 
-    request.get('https://api.imgur.com/3/image/g4Jyo7L', {
+    const options = {
         headers: {
             Authorization: 'Client-ID dc6e79e2ed95c6b'
         }
-    }).then(r => res.status(200).json({
-        data: r,
-        success: true,
-    }))
-        .catch(error => res.status(511).json({
-            data: error,
-            success: false,
-        }))
+    }
+
+    request('https://api.imgur.com/3/image/g4Jyo7L', options, function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log('body:', body); // Print the HTML for the Google homepage.
+    });
 })
