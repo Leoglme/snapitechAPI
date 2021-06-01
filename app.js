@@ -83,7 +83,7 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
 
-    axios.post('https://api.imgur.com/3/image', {image: 'https://www.justifit.fr/wp-content/uploads/2020/06/Droit-a-limage.jpg'}, {
+    axios.get('https://api.imgur.com/3/image/g4Jyo7L', {
         headers: {
             Authorization: 'Client-ID ' + apiKey,
             'Content-Type': 'multipart/form-data'
