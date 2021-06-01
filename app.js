@@ -87,8 +87,7 @@ app.post('/upload/imgur', (req, res, next) => {
 
     axios.get('https://api.imgur.com/3/image/g4Jyo7L', {
         headers: {
-            Authorization: 'Client-ID ' + apiKey,
-            'Content-Type': 'multipart/form-data'
+            Authorization: 'Client-ID ' + apiKey
         }
     }).then(r => res.status(200).json({
         data: r,
