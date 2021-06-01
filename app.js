@@ -86,7 +86,7 @@ app.post('/upload/imgur', (req, res, next) => {
         image: data,
         method: 'post',
         headers: {
-            Authorization: 'Client-ID ' + apiKey
+            Authorization: 'Client-ID dc6e79e2ed95c6b'
         }
     }
 
