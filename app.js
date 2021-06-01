@@ -91,7 +91,7 @@ app.post('/upload/imgur', (req,res, next) => {
     // };
     // req.pipe(request.post(forwardReqConfig)).pipe(res)
     imgur.setClientID(apiKey);
-    imgur.upload(path.join(__dirname, req.body.image),function(err, res){
+    imgur.upload(req.body.image.uri,function(err, res){
         console.log(res.data.link); //log the imgur url
     });
 })
