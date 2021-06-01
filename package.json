@@ -32,7 +32,6 @@
     "util.promisify": "^1.1.1"
   },
   "devDependencies": {
-    "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.2",
     "connect-flash": "^0.1.1",
