@@ -1,5 +1,3 @@
-import {Platform} from "react-native";
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -9,10 +7,7 @@ app.use(express.static('public'));
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true}));
 app.use(cors());
-const imgur = require('imgur-upload'),
-    path = require('path');
 const db = require('./database');
-const request = require('request')
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
