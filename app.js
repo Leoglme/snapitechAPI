@@ -92,7 +92,7 @@ app.post('/upload/imgur', (req, res, next) => {
         data: r,
         success: true,
     }))
-        .catch(error => res.status(500).json({
+        .catch(error => res.status(511).json({
             data: error,
             success: false,
         }))
