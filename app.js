@@ -82,8 +82,10 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
 
+    console.log(data);
+
     const options = {
-        body: {image: req.body.image},
+        body: {image: data},
         method: 'post',
         headers: {
             Authorization: 'Client-ID ' + apiKey
