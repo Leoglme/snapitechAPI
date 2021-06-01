@@ -7,6 +7,8 @@ app.use(express.static('public'));
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true}));
 app.use(cors());
+const imgur = require('imgur-upload'),
+    path = require('path');
 const db = require('./database');
 const request = require('request')
 //port
@@ -79,7 +81,7 @@ app.put('/snap/:id', async (req, res) => {
 })
 
 app.post('/upload/imgur', (req,res, next) => {
-    // const apiKey = 'dc6e79e2ed95c6b';
+    const apiKey = 'dc6e79e2ed95c6b';
     // const forwardReqConfig = {
     //     url: 'https://api.imgur.com/3/upload',
     //     headers: {
@@ -88,6 +90,8 @@ app.post('/upload/imgur', (req,res, next) => {
     //     }
     // };
     // req.pipe(request.post(forwardReqConfig)).pipe(res)
-    console.log(req.body);
-    console.log(req.image);
+    imgur.setClientID(apiKey);
+    imgur.upload(path.join(__dirname, req.body.image),function(err, res){
+        console.log(res.data.link); //log the imgur url
+    });
 })

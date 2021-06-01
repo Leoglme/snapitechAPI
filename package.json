@@ -17,6 +17,7 @@
     "express-validator": "^5.3.0",
     "forms-mongoose": "0.0.6",
     "http-errors": "~1.6.3",
+    "imgur-upload": "^0.1.2",
     "jade": "^0.29.0",
     "mdb-ui-kit": "^3.6.0",
     "mongoose": "^5.12.9",
@@ -26,8 +27,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pug": "^3.0.2",
-    "util.promisify": "^1.1.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "util.promisify": "^1.1.1"
   },
   "devDependencies": {
     "bcrypt": "^5.0.1",
