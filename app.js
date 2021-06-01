@@ -11,7 +11,7 @@ const db = require('./database');
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
-const fetch = require('node-fetch');
+const request = require('request');
 app.listen(port, hostname, () => {
     console.log("bien connecté");
     console.log(`Server running at https://${hostname}:${port}`);
@@ -82,8 +82,7 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
 
-    fetch('https://api.imgur.com/3/image/g4Jyo7L', {
-        method: 'GET',
+    request.get('https://api.imgur.com/3/image/g4Jyo7L', {
         headers: {
             Authorization: 'Client-ID dc6e79e2ed95c6b'
         }
