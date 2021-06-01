@@ -50,7 +50,7 @@ app.post('/api/upload', async (req, res) => {
 });
 
 app.get('/snaps/:email', async (req, res) => {
-    const snaps = await Snaps.find({receiver: req.params.email}).sort({'updatedAt': 1});
+    const snaps = await Snaps.find({receiver: req.params.email}).sort({'updatedAt': -1});
     res.status(200).json({
         data: snaps,
         success: true,
