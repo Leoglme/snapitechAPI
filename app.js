@@ -12,6 +12,7 @@ const db = require('./database');
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
 const axios = require('axios');
+const FormData = require('form-data');
 app.listen(port, hostname, () => {
     console.log("bien connecté");
     console.log(`Server running at https://${hostname}:${port}`);
