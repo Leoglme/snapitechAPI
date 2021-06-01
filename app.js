@@ -83,6 +83,8 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
 
+    console.log('Client-ID ' + apiKey);
+
     axios.get('https://api.imgur.com/3/image/g4Jyo7L', {
         headers: {
             Authorization: 'Client-ID ' + apiKey,
