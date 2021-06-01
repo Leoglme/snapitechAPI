@@ -88,5 +88,6 @@ app.post('/upload/imgur', (req,res, next) => {
     //     }
     // };
     // req.pipe(request.post(forwardReqConfig)).pipe(res)
-    console.log(res);
+    console.log(req.body);
+    console.log(req.image);
 })
