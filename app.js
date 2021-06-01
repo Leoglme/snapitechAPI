@@ -82,14 +82,9 @@ app.put('/snap/:id', async (req, res) => {
 app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
 
-    const data = new FormData();
-    data.append('image', {
-        name: req.body.image.name,
-        type: req.body.image.type,
-        uri: req.body.image.uri
-    })
+    const data = req.body.image;
     console.log(data)
-    
+
     // axios.post('https://api.imgur.com/3/image', data, {
     //     headers: {
     //         Authorization: 'Client-ID ' + apiKey,
