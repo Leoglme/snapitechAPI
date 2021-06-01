@@ -1,3 +1,5 @@
+import {Platform} from "react-native";
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -14,6 +16,7 @@ const request = require('request')
 //port
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
+const axios = require('axios')
 app.listen(port, hostname, () => {
     console.log("bien connecté");
     console.log(`Server running at https://${hostname}:${port}`);
@@ -80,18 +83,26 @@ app.put('/snap/:id', async (req, res) => {
         }));
 })
 
-app.post('/upload/imgur', (req,res, next) => {
-    const apiKey = 'dc6e79e2ed95c6b';
-    // const forwardReqConfig = {
-    //     url: 'https://api.imgur.com/3/upload',
-    //     headers: {
-    //         Authorization: 'Client-ID ' + apiKey,
-    //         'Content-Type': 'multipart/form-data'
-    //     }
-    // };
-    // req.pipe(request.post(forwardReqConfig)).pipe(res)
-    imgur.setClientID(apiKey);
-    imgur.upload(req.body.image.uri,function(err, res){
-        console.log(res.data.link); //log the imgur url
-    });
+app.post('/upload/imgur', (req, res, next) => {
+    const apiKey = req.body.apiKey;
+
+    const data = new FormData();
+    data.append('image', {
+        name: req.body.image.name,
+        type: req.body.image.type,
+        uri: req.body.image.uri
+    })
+    axios.post('https://api.imgur.com/3/image', data, {
+        headers: {
+            Authorization: 'Client-ID ' + apiKey,
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then(r => res.status(200).json({
+        data: r,
+        success: true,
+    }))
+        .catch(error => res.status(500).json({
+            data: error,
+            success: false,
+        }))
 })
