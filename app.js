@@ -81,7 +81,7 @@ app.put('/snap/:id', async (req, res) => {
 app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
     const data = req.body.image;
-
+    console.log("je passe ");
     console.log(data);
 
     const options = {
