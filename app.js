@@ -83,19 +83,17 @@ app.post('/upload/imgur', (req, res, next) => {
     const apiKey = req.body.apiKey;
 
     const data = req.body.image;
-    console.log(data)
-
-    // axios.post('https://api.imgur.com/3/image', data, {
-    //     headers: {
-    //         Authorization: 'Client-ID ' + apiKey,
-    //         'Content-Type': 'multipart/form-data'
-    //     }
-    // }).then(r => res.status(200).json({
-    //     data: r,
-    //     success: true,
-    // }))
-    //     .catch(error => res.status(500).json({
-    //         data: error,
-    //         success: false,
-    //     }))
+    axios.post('https://api.imgur.com/3/image', data, {
+        headers: {
+            Authorization: 'Client-ID ' + apiKey,
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then(r => res.status(200).json({
+        data: r,
+        success: true,
+    }))
+        .catch(error => res.status(500).json({
+            data: error,
+            success: false,
+        }))
 })
