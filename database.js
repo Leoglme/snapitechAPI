@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://dibodev:Rangiora62!@cluster0.lismu.mongodb.net/snapitech?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://', {useNewUrlParser: true});
 const conn = mongoose.connection;
 conn.on('connected', function() {
     console.log('database is connected successfully');
